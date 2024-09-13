@@ -4,16 +4,28 @@ class BasicAppButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final double? height;
-  const BasicAppButton(
-      {required this.onPressed, required this.title, this.height, super.key});
+
+  const BasicAppButton({
+    required this.onPressed,
+    required this.title,
+    this.height,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      style:
-          ElevatedButton.styleFrom(minimumSize: Size.fromHeight(height ?? 80)),
-      child: const Text("Get Started"),
+      style: ElevatedButton.styleFrom(
+        minimumSize: Size.fromHeight(height ?? 80), // Button height
+      ),
+      child: Text(
+        title, // Dynamically set the button title
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
     );
   }
 }
