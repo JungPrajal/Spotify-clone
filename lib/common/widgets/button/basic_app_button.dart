@@ -21,10 +21,6 @@ class BasicAppButton extends StatelessWidget {
       ),
       child: Text(
         title, // Dynamically set the button title
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
-        ),
       ),
     );
   }
